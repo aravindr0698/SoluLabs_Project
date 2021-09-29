@@ -1,0 +1,36 @@
+.box {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 50px;
+    padding: 10px;
+    background-color: #1b262d;
+    margin: 5px;
+    width: fit-content;
+  }
+  
+  .icon{
+      font-size:48px;
+      width:60px;
+      height: 60px;
+      color: #c4c7c9;
+  }
+  
+  .row{
+      display:flex;
+      flex-flow:column;
+      padding: 0px 20px;
+      h4 {
+        font:Bold 16px Arial;
+        text-align:center;
+        padding:0px;
+        margin:0px;
+        color: #c4c7c9;
+      }
+  }
+  
+  .line{
+      color: #c4c7c9;
+      font:16px Arial;
+      text-align:center;
+      font:normal 14px Arial;
+  }

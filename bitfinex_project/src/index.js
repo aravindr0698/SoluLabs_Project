@@ -2,20 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { store } from './app/store';
-import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+import { applyMiddleware, createStore } from "redux";
+import { Provider } from "react-redux";
+import { rootReducers }  from "./store/rootReducer";
+import logger from "redux-logger";
+import { throttleReduxCall } from './components/orderBook/middleware/throttled';
+
+const store = createStore(rootReducers, applyMiddleware(logger, throttleReduxCall));
 
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+    <App />
+  </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

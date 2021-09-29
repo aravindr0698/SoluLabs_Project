@@ -1,0 +1,1 @@
+export const saveTicker = (payload) => ({ type: "TICKER", payload });
